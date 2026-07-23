@@ -1,7 +1,17 @@
 def ler_opcao_numerica():
-    pass
+    """ função responsável por retornar uma opção numérica sem haver
+    necessidade de ficar tratando cada try e except inteiro separadamente """
+
+    while True:
+        try:
+            return int(input('Escolha uma dentre as opções acima -> '))
+        except ValueError:
+            print('[ERRO] opção não encontrada\n')
+            continue
 
 def menu_numerado():
+    """ função responsável pela exibição do menu numerado 
+    e pelo retorno das opções para funcionamento do programa """
 
     opcoes = ['Adicionar elemento', 'Remover elemento', 'Ver estado atual', 'Encerrar'] # <- lista criada apenas para exibição dinâmica
 
@@ -12,11 +22,7 @@ def menu_numerado():
 
     while True:
         
-        try:
-            opcao = int(input('O que deseja fazer -> '))
-        except ValueError:  # <- esse bloco é responsável por conferir uma entrada numérica
-            print('[ERRO] valor inválido\n')
-            continue
+        opcao = ler_opcao_numerica()
 
         if (opcao < 1 or 
             opcao > 4): # <- esse bloco confere se o usuário digitou algo dentre as opções sugeridas antes de retornar o valor da função
@@ -25,7 +31,7 @@ def menu_numerado():
         else:
             break
 
-    opcoes = ['Pilhas', 'Filas']
+    opcoes = ['Pilhas', 'Filas'] # <- lista criada apenas para exibição dinâmica
 
     print('\nCom o que deseja trabalhar:')
     for indice, lista in enumerate(opcoes, start=1):
@@ -33,15 +39,11 @@ def menu_numerado():
 
     while True:
 
-        try:
-            pilha_ou_fila = int(input('Selecione uma opção -> '))
-        except ValueError: 
-            print('[ERRO] valor inválido\n')
-            continue
+        pilha_ou_fila = ler_opcao_numerica()
 
         if (pilha_ou_fila < 1 or
-            pilha_ou_fila > 2):
-            print('[ERRO] opção não encontrada\n')
+            pilha_ou_fila > 2): # <- esse bloco de while true serve apenas para definir qual será o caminho traçado pelo usuário após
+            print('[ERRO] opção não encontrada\n') # decidir qual opção dentre as opções, a partir daqui saberemos se ele quer trabalhar com pilhas ou filas
             continue
         else:
             break
