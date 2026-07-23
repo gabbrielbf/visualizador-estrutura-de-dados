@@ -42,6 +42,8 @@ def menu_numerado():
     return opcao
 
 def pilhas_ou_filas():
+    """ função separada para definir o tipo de lista a ser trabalhada """
+
     opcoes = ['Pilhas', 'Filas'] # <- lista criada apenas para exibição dinâmica
     
     print('\nCom o que deseja trabalhar:')
