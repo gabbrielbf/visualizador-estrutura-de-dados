@@ -1,8 +1,6 @@
 # estrutura dos dados
 from menu import menu_numerado, pilhas_ou_filas, limpar_tela
 
-
-
 def adicionar_elemento():
     """ função global para adicionar elementos 
     independente do tipo de lista """
@@ -18,6 +16,9 @@ def adicionar_elemento():
 
     return entrada
 
+def remover_elemento():
+    pass
+
 lista_pilhas = []
 lista_filas = []
 
@@ -27,7 +28,7 @@ def rodar_programa():
         opcao = menu_numerado()
         match opcao:
             case 1:
-                    
+                
                 pilha_ou_fila = pilhas_ou_filas()
                 elemento = adicionar_elemento()
 
@@ -46,3 +47,4 @@ def rodar_programa():
                 print('\nprograma encerrado.\n')
                 break
 
+rodar_programa()
