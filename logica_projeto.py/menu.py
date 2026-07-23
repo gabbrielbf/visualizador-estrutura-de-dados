@@ -39,8 +39,11 @@ def menu_numerado():
         else:
             break
 
-    opcoes = ['Pilhas', 'Filas'] # <- lista criada apenas para exibição dinâmica
+    return opcao
 
+def pilhas_ou_filas():
+    opcoes = ['Pilhas', 'Filas'] # <- lista criada apenas para exibição dinâmica
+    
     print('\nCom o que deseja trabalhar:')
     print('-'*30)
     for indice, lista in enumerate(opcoes, start=1):
@@ -58,5 +61,4 @@ def menu_numerado():
         else:
             break
 
-    return opcao, pilha_ou_fila
-
+    return pilha_ou_fila
