@@ -1,3 +1,5 @@
+import os, time
+
 def ler_opcao_numerica():
     """ função responsável por retornar uma opção numérica sem haver
     necessidade de ficar tratando cada try e except inteiro separadamente """
@@ -8,6 +10,12 @@ def ler_opcao_numerica():
         except ValueError:
             print('[ERRO] opção não encontrada\n')
             continue
+
+def limpar_tela():
+    """ limpa a tela para manter a interface organizada """
+
+    time.sleep(2)
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def menu_numerado():
     """ função responsável pela exibição do menu numerado 
