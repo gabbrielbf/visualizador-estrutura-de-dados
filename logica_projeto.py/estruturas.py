@@ -1,5 +1,6 @@
 # estrutura dos dados
-from menu import menu_numerado, pilhas_ou_filas, limpar_tela
+from menu import menu_numerado, limpar_tela
+from classes import pilhas_ou_filas
 
 def adicionar_elemento():
     """ função global para adicionar elementos 
@@ -23,6 +24,7 @@ lista_pilhas = []
 lista_filas = []
 
 def rodar_programa():
+
     while True:
         limpar_tela()
         opcao = menu_numerado()
