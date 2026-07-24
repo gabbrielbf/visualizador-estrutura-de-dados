@@ -1,0 +1,34 @@
+from menu import ler_opcao_numerica
+
+class pilhas_ou_filas:
+    """ classe separada para definir o tipo de lista a ser trabalhada """
+
+    def __init__(self):
+        pass
+
+    def exibir_pilhas_ou_filas(self):
+        """ método responsável por apenas exibir qual será o tipo de lista a ser trabalhada """
+
+        opcoes = ['Pilhas', 'Filas'] # <- lista criada apenas para exibição dinâmica
+        
+        print('\nCom o que deseja trabalhar:')
+        print('-'*30)
+        for indice, lista in enumerate(opcoes, start=1):
+            print(f'{indice} - {lista}')
+        print('-'*30)
+
+    def selecionar_pilhas_ou_filas(self):
+        """ método responsável por retornar um valor numérico e trabalhar encima desse retorno """
+
+        while True:
+
+            pilha_ou_fila = ler_opcao_numerica()
+
+            if (pilha_ou_fila < 1 or
+                pilha_ou_fila > 2): # <- esse bloco de while true serve apenas para definir qual será o caminho traçado pelo usuário após
+                print('[ERRO] opção não encontrada\n') # decidir qual opção dentre as opções, a partir daqui saberemos se ele quer trabalhar com pilhas ou filas
+                continue
+            else:
+                break
+
+        return pilha_ou_fila
